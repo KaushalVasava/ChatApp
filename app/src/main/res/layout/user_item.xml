@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="10dp"
+    android:background="@color/white"
+    android:id="@+id/toolbar3">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/userprofile"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@drawable/avatar" />
+
+    <TextView
+        android:id="@+id/username"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:text="Sample Name"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:layout_toEndOf="@id/userprofile"
+        android:layout_toRightOf="@id/userprofile" />
+
+    <TextView
+        android:id="@+id/lastMsg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:maxLines="1"
+        android:textColor="@color/grey"
+        android:ellipsize="end"
+        android:textSize="12sp"
+        android:layout_toRightOf="@id/userprofile"
+        android:layout_toEndOf="@id/userprofile"
+        android:layout_alignBottom="@id/userprofile"
+        />
+
+<!--    <TextView-->
+<!--        android:id="@+id/msgTime"-->
+<!--        android:layout_width="64dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:textSize="10sp"-->
+<!--        android:textColor="@color/grey"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        android:layout_alignParentEnd="true"-->
+<!--        app:layout_constraintTop_toTopOf="parent" />-->
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/img_on"
+        android:layout_width="15dp"
+        android:layout_height="15dp"
+        app:civ_border_width="10dp"
+        app:civ_border_color="#05df29"
+        android:visibility="gone"
+        android:src="@mipmap/ic_launcher"
+        android:layout_below="@id/username"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="-15dp"
+        android:layout_toRightOf="@id/userprofile"
+        android:layout_toEndOf="@id/userprofile"
+        />
+</RelativeLayout>

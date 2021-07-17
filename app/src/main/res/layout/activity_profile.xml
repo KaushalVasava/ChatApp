@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ProfileActivity">
+
+    <ImageView
+        android:id="@+id/editUserProfile"
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:scaleType="centerCrop"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/avatar"
+        />
+    <ImageView
+        android:id="@+id/changeImage"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:tooltipText="Change Image"
+        android:layout_alignBottom="@id/editUserProfile"
+        android:layout_alignEnd="@id/editUserProfile"
+        android:layout_marginEnd="20dp"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/ic_edit"
+        />
+    <ImageView
+        android:id="@+id/changeName"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:tooltipText="Change Name"
+        android:layout_alignBottom="@id/editName"
+        android:layout_alignParentEnd="true"
+        android:src="@drawable/ic_edit"
+        android:layout_marginEnd="20dp"
+        />
+    <ImageView
+        android:id="@+id/changePhoneNumber"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:tooltipText="Change Number"
+        android:layout_alignBottom="@id/editNumber"
+        android:layout_alignParentEnd="true"
+        android:src="@drawable/ic_edit"
+        android:layout_marginEnd="20dp"
+        />
+    <TextView
+        android:id="@+id/editName"
+        android:layout_below="@id/editUserProfile"
+        android:layout_width="130dp"
+        android:layout_height="30dp"
+        android:text="Name"
+        android:textColor="@color/black"
+        android:gravity="bottom"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="30dp"
+        android:textSize="15sp"
+        android:inputType="text"
+        />
+    <EditText
+        android:id="@+id/editUserName"
+        android:minWidth="140dp"
+        android:visibility="gone"
+        android:textColor="@color/black"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/editUserProfile"
+        android:layout_toRightOf="@id/editName"
+        android:layout_marginTop="30dp"
+        android:layout_marginStart="15dp"
+        />
+
+    <TextView
+        android:id="@+id/textUserName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/editUserProfile"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="30dp"
+        android:layout_alignBottom="@id/editName"
+        android:layout_toRightOf="@id/editName"
+        android:gravity="bottom"
+        android:minWidth="140dp"
+        android:textSize="20sp" />
+    <TextView
+        android:id="@+id/editNumber"
+        android:layout_below="@id/editName"
+        android:layout_width="130dp"
+        android:layout_height="30dp"
+        android:textColor="@color/black"
+        android:text="Phone Number"
+        android:gravity="bottom"
+        android:layout_marginTop="30dp"
+        android:layout_marginStart="30dp"
+        android:textSize="15sp"
+        android:inputType="text"
+        />
+    <EditText
+        android:id="@+id/editPhoneNumber"
+        android:minWidth="140dp"
+        android:visibility="gone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/editName"
+        android:layout_toRightOf="@id/editNumber"
+        android:layout_marginTop="30dp"
+        android:layout_marginStart="15dp"
+        android:inputType="number"
+        />
+    <TextView
+        android:id="@+id/textPhoneNumber"
+        android:minWidth="140dp"
+        android:textSize="20sp"
+        android:gravity="bottom"
+        android:layout_alignBottom="@id/editNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/editName"
+        android:layout_marginTop="30dp"
+        android:layout_marginStart="15dp"
+        android:layout_toRightOf="@id/editNumber"
+        android:inputType="number"
+        />
+
+
+    <Button
+        android:id="@+id/saveName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/editNumber"
+        android:layout_marginTop="50dp"
+        android:layout_centerInParent="true"
+        android:backgroundTint="@color/blue"
+        android:text="Save" />
+
+</RelativeLayout>
