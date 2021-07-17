@@ -31,10 +31,12 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.messaging.FirebaseMessaging;
 import com.kmv.chatapp.Model.Chat;
 import com.kmv.chatapp.Model.User;
 import com.kmv.chatapp.databinding.ActivityMainBinding;
 import com.kmv.chatapp.Adapter.FragmentAdapter;
+import com.kmv.chatapp.utils.SharedPref;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -47,6 +49,7 @@ import androidx.fragment.app.FragmentManager;
 import androidx.viewpager2.widget.ViewPager2;
 
 public class MainActivity extends AppCompatActivity {
+
     ActivityMainBinding binding;
     FragmentAdapter adapter;
     DatabaseReference reference;
@@ -54,6 +57,7 @@ public class MainActivity extends AppCompatActivity {
     public static final int REQUEST_READ_CONTACTS = 79;
     ArrayList mobileArray;
 
+    String userName;
 
     boolean isChat=true;
 //    BroadcastReceiver broadcastReceiver;
@@ -66,6 +70,11 @@ public class MainActivity extends AppCompatActivity {
         setContentView(binding.getRoot());
         setSupportActionBar(binding.toolbarmain.toolbarmain);
         isChat = isConnected();
+
+        FirebaseMessaging.getInstance().subscribeToTopic("userABC");
+        String uid = FirebaseAuth.getInstance().getUid();
+        if (uid != null)
+            FirebaseMessaging.getInstance().subscribeToTopic(uid);
 
         if (ActivityCompat.checkSelfPermission(MainActivity.this, android.Manifest.permission.READ_CONTACTS)
                 == PackageManager.PERMISSION_GRANTED) {
@@ -87,6 +96,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 User user= snapshot.getValue(User.class);
+                SharedPref shared = new SharedPref(MainActivity.this);
+                shared.setUserName( user.getUsername());
                 binding.toolbarmain.userName.setText(user.getUsername());
                 if(user.getProfileImage().equals("default")){
                     binding.toolbarmain.userProfile.setImageResource(R.drawable.avatar);

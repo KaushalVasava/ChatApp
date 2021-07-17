@@ -11,22 +11,22 @@ import java.util.Map;
 
 import androidx.annotation.NonNull;
 
-class NotificationService extends FirebaseMessagingService {
-
-    User user = new User();
-    @Override
-    public void onMessageReceived(@NonNull RemoteMessage remoteMessage) {
-        super.onMessageReceived(remoteMessage);
-    }
-
-    @Override
-    public void onNewToken(@NonNull String s) {
-        super.onNewToken(s);
-    }
-    private  void UpdateToken(String token){
-        DatabaseReference reference = FirebaseDatabase.getInstance().getReference("users").child(user.getUid());
-        Map<String,Object> map =new HashMap<>();
-        map.put("token",token);
-        reference.updateChildren(map);
-    }
-}
+//class NotificationService extends FirebaseMessagingService {
+//
+//    User user = new User();
+//    @Override
+//    public void onMessageReceived(@NonNull RemoteMessage remoteMessage) {
+//        super.onMessageReceived(remoteMessage);
+//    }
+//
+//    @Override
+//    public void onNewToken(@NonNull String s) {
+//        super.onNewToken(s);
+//    }
+//    private  void UpdateToken(String token){
+//        DatabaseReference reference = FirebaseDatabase.getInstance().getReference("users").child(user.getUid());
+//        Map<String,Object> map =new HashMap<>();
+//        map.put("token",token);
+//        reference.updateChildren(map);
+//    }
+//}
